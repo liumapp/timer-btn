@@ -32,6 +32,7 @@ export default {
   },
   methods: {
     run: function () {
+      this.start();
       this.$emit('run');
     },
     start: function() {
@@ -49,11 +50,10 @@ export default {
       if (this.time > 0) {
         this.time--;
         setTimeout(this.timer, 1000);
-      }else{
+      } else {
         this.btnDisable = false;
       }
     }
-
   },
   computed: {
     text: function () {
