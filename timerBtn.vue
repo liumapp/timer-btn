@@ -27,26 +27,27 @@ export default {
       btnDisable: false
     }
   },
-  mounted () {
-    this.btnDisable = this.disabled;
-  },
   methods: {
-    run: function () {
+    init () {
+      this.time = this.second;
+      this.btnDisable = this.disabled;
+    },
+    run () {
+      this.init();
       this.start();
       this.$emit('run');
     },
-    start: function() {
-      this.time = this.second;
+    start () {
       this.timer();
     },
-    stop: function() {
+    stop () {
       this.time = 0;
       this.btnDisable = false;
     },
-    setDisabled: function(val) {
+    setDisabled (val) {
       this.btnDisable = val;
     },
-    timer: function () {
+    timer () {
       if (this.time > 0) {
         this.time--;
         setTimeout(this.timer, 1000);
