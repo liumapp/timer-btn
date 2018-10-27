@@ -6,7 +6,7 @@
  * @date 2018/10/27
  */
 <template>
-  <button v-on:click="run" :disabled="btnDisable || time > 0">{{ text }}</button>
+  <button v-on:click="run" :disabled="btnDisable">{{ text }}</button>
 </template>
 <script>
 export default {
@@ -37,6 +37,9 @@ export default {
       afterClickText: ''
     }
   },
+  mounted () {
+    this.init();
+  },
   methods: {
     init () {
       this.time = this.second;
@@ -45,7 +48,7 @@ export default {
       this.afterClickText = this.textAfterClick;
     },
     run () {
-      this.init();
+//      this.init();
       this.start();
       this.$emit('run');
 
