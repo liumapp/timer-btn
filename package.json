@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "限制点击时间的按钮，可用于短信验证码等场景，相关样式持续更新中",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/liumapp/timer-btn.git"
