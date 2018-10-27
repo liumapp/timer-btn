@@ -6,7 +6,7 @@
  * @date 2018/10/27
  */
 <template>
-  <button v-on:click="run" :disabled="time > 0 || btnDisable">{{ text }}</button>
+  <button v-on:click="start" :disabled="time > 0 || btnDisable">{{ text }}</button>
 </template>
 <script>
 export default {
@@ -67,6 +67,7 @@ export default {
         setTimeout(this.timer, 1000);
       } else {
         this.btnDisable = false;
+        this.end();
       }
     }
   },
