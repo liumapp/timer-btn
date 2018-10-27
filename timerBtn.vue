@@ -26,7 +26,7 @@ export default {
     },
     textAfterClick: {
       type: String,
-      default: 's 后重获取'
+      default: 's 后重新获取'
     }
   },
   data () {
@@ -48,6 +48,7 @@ export default {
       this.init();
       this.start();
       this.$emit('run');
+
     },
     start () {
       this.timer();
