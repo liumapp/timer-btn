@@ -47,7 +47,7 @@ export default {
       this.afterClickText = this.textAfterClick;
     },
     end () {
-      this.$emit('after');
+      this.$emit('end');
     },
     start () {
       this.$emit('start');
