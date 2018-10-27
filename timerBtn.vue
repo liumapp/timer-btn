@@ -6,7 +6,7 @@
  * @date 2018/10/27
  */
 <template>
-  <button v-on:click="run" :disabled="disabled || time > 0">{{ text }}</button>
+  <button v-on:click="run" :disabled="btnDisable || time > 0">{{ text }}</button>
 </template>
 <script>
 export default {
@@ -21,33 +21,36 @@ export default {
       default: false
     }
   },
-  data:function () {
+  data () {
     return {
       time: 0,
-      disabled: false
+      btnDisable: false
     }
+  },
+  mounted () {
+    this.btnDisable = this.disabled;
   },
   methods: {
     run: function () {
       this.$emit('run');
     },
-    start: function(){
+    start: function() {
       this.time = this.second;
       this.timer();
     },
-    stop: function(){
+    stop: function() {
       this.time = 0;
-      this.disabled = false;
+      this.btnDisable = false;
     },
-    setDisabled: function(val){
-      this.disabled = val;
+    setDisabled: function(val) {
+      this.btnDisable = val;
     },
     timer: function () {
       if (this.time > 0) {
         this.time--;
         setTimeout(this.timer, 1000);
       }else{
-        this.disabled = false;
+        this.btnDisable = false;
       }
     }
 
