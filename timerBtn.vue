@@ -19,18 +19,30 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    textBeforeClick: {
+      type: String,
+      default: '获取验证码'
+    },
+    textAfterClick: {
+      type: String,
+      default: 's 后重获取'
     }
   },
   data () {
     return {
       time: 0,
-      btnDisable: false
+      btnDisable: false,
+      beforeClickText: '',
+      afterClickText: ''
     }
   },
   methods: {
     init () {
       this.time = this.second;
       this.btnDisable = this.disabled;
+      this.beforeClickText = this.textBeforeClick;
+      this.afterClickText = this.textAfterClick;
     },
     run () {
       this.init();
@@ -58,7 +70,7 @@ export default {
   },
   computed: {
     text: function () {
-      return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+      return this.time > 0 ? this.time + this.afterClickText : this.beforeClickText;
     }
   }
 }
