@@ -23,7 +23,8 @@ export default {
   },
   data:function () {
     return {
-      time: 0
+      time: 0,
+      disabled: false
     }
   },
   methods: {
