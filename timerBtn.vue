@@ -45,7 +45,6 @@ export default {
       this.btnDisable = this.disabled;
       this.beforeClickText = this.textBeforeClick;
       this.afterClickText = this.textAfterClick;
-      console.log(this.textAfterClick);
     },
     end () {
       this.$emit('end');
