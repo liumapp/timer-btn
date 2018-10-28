@@ -35,7 +35,7 @@ Vue.component('timerBtn', timerBtn)
 <template>
     //按钮的样式根据您所选用的ui框架选择class
     <timer-btn class="ivu-btn ivu-btn-default" v-on:start="start"
-                               v-on:end="end" second="10" textBeforeClick="发送验证码" textAfterClick="秒后重新获取"></timer-btn>
+                               v-on:end="end" :second="10" textBeforeClick="发送验证码" textAfterClick="秒后重新获取"></timer-btn>
 </template>
 
 <script>
