@@ -16,7 +16,7 @@
 ## 安装 及 使用
 
 ```bash
-$ npm install --save lm-sign-area
+$ npm install --save timer-btn
 ```
 
 
