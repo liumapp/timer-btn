@@ -31,6 +31,7 @@ Vue.component('timerBtn', timerBtn)
 
 使用组件
 
+```
 <template>
     //按钮的样式根据您所选用的ui框架选择class
     <timer-btn class="ivu-btn ivu-btn-default" v-on:start="start"
@@ -48,6 +49,7 @@ export default {
   }
 }
 </script>
+```
 
 ### 参数
 
