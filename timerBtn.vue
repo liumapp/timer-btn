@@ -27,14 +27,14 @@ export default {
     textAfterClick: {
       type: String,
       default: 's 后重新获取'
-    }
+    },
   },
   data () {
     return {
       time: 0,
       btnDisable: false,
       beforeClickText: '',
-      afterClickText: ''
+      afterClickText: '',
     }
   },
   mounted () {

@@ -42,6 +42,7 @@ Vue.component('timerBtn', timerBtn)
 export default {
   start () {
     console.log('您点击了按钮，按钮将会在您指定的时间之内不可用，并显示倒计时');
+    return true;//返回true执行后续逻辑，否则不执行
   },
   //验证码按钮的等待时间结束
   end () {
