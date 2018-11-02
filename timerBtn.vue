@@ -6,7 +6,7 @@
  * @date 2018/10/27
  */
 <template>
-  <button v-on:click="start" :disabled="time > 0 || btnDisable">{{ text }}</button>
+  <button v-on:click="beforeStart" :disabled="time > 0 || btnDisable">{{ text }}</button>
 </template>
 <script>
 export default {

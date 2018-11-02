@@ -1,6 +1,6 @@
 {
   "name": "timer-btn",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "限制点击时间的按钮，可用于短信验证码等场景，相关样式持续更新中",
   "main": "index.js",
   "repository": {
