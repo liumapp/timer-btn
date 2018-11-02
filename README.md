@@ -34,7 +34,7 @@ Vue.component('timerBtn', timerBtn)
 ```
 <template>
     //按钮的样式根据您所选用的ui框架选择class
-    <timer-btn class="ivu-btn ivu-btn-default" v-on:beforeStart="sendCode()"
+    <timer-btn ref="tbtn" class="ivu-btn ivu-btn-default" v-on:beforeStart="sendCode()"
                                v-on:end="endTime" :second="30" textBeforeClick="发送验证码" textAfterClick="秒后重新获取"></timer-btn>
 </template>
 
@@ -44,12 +44,12 @@ export default {
   sendCode () {
     //检查form
     //确认执行发送逻辑
-    if (true) {
-      console.log('您点击了按钮，按钮将会在您指定的时间之内不可用，并显示倒计时');
-      timerBtn.start();
-    } else {
-      // your logic
-    }
+    this.$refs['loginForm'].validateField('phone', valid => {
+      //验证通过
+      if (valid === null || valid === '') {
+        this.$refs['tbtn'].start();
+      }
+    });
 
   },
   //验证码按钮的等待时间结束
