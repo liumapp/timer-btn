@@ -94,6 +94,26 @@ export default {
 
 按钮点击之后显示的文本，second的倒计时会在文本最前面显示，所以一般会加一个"秒"或者"s"
 
+#### type
+
+类型: `String`
+必要性: `false`
+默认值: `link`   //即a标签
+
+按钮的类型，默认选择a标签，提供两种按钮
+
+link ====== a标签
+button ====== button标签
+
+
+#### btnStyle
+
+类型: `Object`
+必要性: `false`
+默认值: `无`
+
+可在父组件自定义样式
+
 ## 后续计划
 
 * 添加更cool的倒计时样式

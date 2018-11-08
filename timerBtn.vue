@@ -7,8 +7,8 @@
  */
 <template>
   <div>
-    <a  v-if="type == 'link'" :style="btnstyle" v-on:click="beforeStart" :disabled="time > 0 || btnDisable">{{ text }}</a>
-    <Button v-else v-on:click="beforeStart"  :style="btnstyle" :disabled="time > 0 || btnDisable">{{ text }}</Button>
+    <a  v-if="type == 'link'" :style="btnStyle" v-on:click="beforeStart" :disabled="time > 0 || btnDisable">{{ text }}</a>
+    <Button v-else v-on:click="beforeStart"  :style="btnStyle" :disabled="time > 0 || btnDisable">{{ text }}</Button>
   </div>
 </template>
 <script>
@@ -35,7 +35,7 @@ export default {
       type: String,
       default: "link" //选择按钮的类型，link为a标签按钮，button为button类型按钮
     },
-    btnstyle:{   //内部按钮的样式，可以传
+    btnStyle:{   //内部按钮的样式，可以传
       type: Object
     }
   },
