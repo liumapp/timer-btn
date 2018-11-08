@@ -1,16 +1,19 @@
 /**
- * @file timerBtn.vue
+ * @file timerBtn.vu
  * @author liumapp
  * @email liumapp.com@gmail.com
  * @homepage http://www.liumapp.com
  * @date 2018/10/27
  */
 <template>
-  <button v-on:click="beforeStart" :disabled="time > 0 || btnDisable">{{ text }}</button>
+  <div>
+    <a  v-if="type == 'link'" :style="btnstyle" v-on:click="beforeStart" :disabled="time > 0 || btnDisable">{{ text }}</a>
+    <Button v-else v-on:click="beforeStart"  :style="btnstyle" :disabled="time > 0 || btnDisable">{{ text }}</Button>
+  </div>
 </template>
 <script>
 export default {
-  name: 'timerBtn',
+  name: "timerBtn",
   props: {
     second: {
       type: Number,
@@ -22,48 +25,55 @@ export default {
     },
     textBeforeClick: {
       type: String,
-      default: '获取验证码'
+      default: "获取验证码"
     },
     textAfterClick: {
       type: String,
-      default: 's 后重新获取'
+      default: "s 后重新获取"
+    },
+    type: {
+      type: String,
+      default: "link" //选择按钮的类型，link为a标签按钮，button为button类型按钮
+    },
+    btnstyle:{   //内部按钮的样式，可以传
+      type: Object
     }
   },
-  data () {
+  data() {
     return {
       time: 0,
       btnDisable: false,
-      beforeClickText: '',
-      afterClickText: '',
-    }
+      beforeClickText: "",
+      afterClickText: ""
+    };
   },
-  mounted () {
+  mounted() {
     this.init();
   },
   methods: {
-    init () {
+    init() {
       this.btnDisable = this.disabled;
       this.beforeClickText = this.textBeforeClick;
       this.afterClickText = this.textAfterClick;
     },
-    end () {
-      this.$emit('end');
+    end() {
+      this.$emit("end");
     },
-    beforeStart () {
-      this.$emit('beforeStart');
+    beforeStart() {
+      this.$emit("beforeStart");
     },
-    start () {
+    start() {
       this.time = this.second;
       this.timer();
     },
-    stop () {
+    stop() {
       this.time = 0;
       this.btnDisable = false;
     },
-    setDisabled (val) {
+    setDisabled(val) {
       this.btnDisable = val;
     },
-    timer () {
+    timer() {
       if (this.time > 0) {
         this.time--;
         setTimeout(this.timer, 1000);
@@ -74,9 +84,16 @@ export default {
     }
   },
   computed: {
-    text: function () {
-      return this.time > 0 ? this.time + this.afterClickText : this.beforeClickText;
+    text: function() {
+      return this.time > 0
+        ? this.time + this.afterClickText
+        : this.beforeClickText;
     }
   }
-}
+};
 </script>
+
+<style lang="less" scoped>
+
+</style>
+
